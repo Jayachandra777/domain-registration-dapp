@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Domain Registration Dapp</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+</head>
+<body>
+    <h1>Domain Registration Dapp</h1>
+    <p id="status">Loading...</p>
+    <div id="content" style="display: none;">
+        <p>Your account: <span id="account"></span></p>
+        <p>Contract address: <span id="contract"></span></p>
+        <hr>
+        <h2>Register a new domain</h2>
+        <form id="register-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="example.com" required>
+            <label for="price">Price (in wei):</label>
+            <input type="number" id="price" name="price" min="1" required>
+            <button type="submit">Register</button>
+        </form>
+        <hr>
+        <h2>Transfer a domain to another address</h2>
+        <form id="transfer-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="example.com" required>
+            <label for="to">To:</label>
+            <input type="text" id="to" name="to" placeholder="0x..." required>
+            <button type="submit">Transfer</button>
+        </form>
+        <hr>
+        <h2>List or unlist a domain for sale</h2>
+        <form id="list-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="example.com" required>
+            <label for="price">Price (in wei):</label>
+            <input type="number" id="price" name="price" min="1" required>
+            <label for="forSale">For sale:</label>
+            <select id="forSale" name="forSale">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+            <button type="submit">List/Unlist</button>
+        </form>
+        <hr>
+        <h2>Buy a domain from another address</h2>
+        <form id="buy-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="example.com" required>
+            <button type="submit">Buy</button>
+        </form>
+
+    </div>
+
+    <!-- Replace with your contract ABI -->
+    <script src="./Domain.json"></script>
+
+    <!-- Replace with your contract address -->
+    <script>const contractAddress = "0x...";</script>
+
+    <!-- Main script -->
+    <script src="./index.js"></script>
+
+</body>
+
+</html>
+
